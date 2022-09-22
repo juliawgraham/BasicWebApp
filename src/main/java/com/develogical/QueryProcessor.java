@@ -1,5 +1,8 @@
 package com.develogical;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -14,6 +17,24 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("name")) {
             return "hello";
         }
+        if (query.toLowerCase().contains("largest")) {
+            String[] parts = query.split(" ");
+            int largest = 0;
+            for (String part: parts) {
+                try {
+                    if (Integer.parseInt(part) > largest) {
+                        largest = Integer.parseInt(part);
+                    }
+                }
+                catch (Exception e) {
+                }
+            }
+
+            return largest + "";
+        }
+        // if (query.toLowerCase().contains("plus")) {
+            
+        // }
         return "";
     }
 }
