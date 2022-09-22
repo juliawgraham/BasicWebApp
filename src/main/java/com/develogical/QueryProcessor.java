@@ -58,6 +58,29 @@ public class QueryProcessor {
 
             return product + "";
         }
+        if (query.toLowerCase().contains("cube")) {
+            String[] parts = query.split(" ");
+            int result = 0;
+            for (String part: parts) {
+                try {
+                    int num = Integer.parseInt(part);
+
+                    double square = Math.sqrt(num);
+                    Boolean isSquare = square - Math.floor(square) == 0;
+                    double cube = Math.cbrt(num);
+                    Boolean isCube = cube - Math.floor(cube) == 0;
+
+                    if (isSquare && isCube) {
+                        result = num;
+                    }
+
+                }
+                catch (Exception e) {
+                }
+            }
+
+            return result + "";
+        }
         return "";
     }
 }
