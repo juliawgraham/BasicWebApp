@@ -32,9 +32,19 @@ public class QueryProcessor {
 
             return largest + "";
         }
-        // if (query.toLowerCase().contains("plus")) {
-            
-        // }
+        if (query.toLowerCase().contains("plus")) {
+            String[] parts = query.split(" ");
+            int sum = 0;
+            for (String part: parts) {
+                try {
+                    sum += Integer.parseInt(part);
+                }
+                catch (Exception e) {
+                }
+            }
+
+            return sum + "";
+        }
         return "";
     }
 }
