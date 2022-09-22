@@ -16,4 +16,3 @@ public class IndexPage extends HtmlPage {
     }
     
 }
- 
