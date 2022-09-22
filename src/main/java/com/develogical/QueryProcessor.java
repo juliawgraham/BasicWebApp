@@ -45,6 +45,19 @@ public class QueryProcessor {
 
             return sum + "";
         }
+        if (query.toLowerCase().contains("multiplied")) {
+            String[] parts = query.split(" ");
+            int product = 1;
+            for (String part: parts) {
+                try {
+                    product *= Integer.parseInt(part);
+                }
+                catch (Exception e) {
+                }
+            }
+
+            return product + "";
+        }
         return "";
     }
 }
